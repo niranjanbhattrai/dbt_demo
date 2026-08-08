@@ -6,3 +6,4 @@ logs/
 .user.yml
 profiles.yml
 dbt_project.yml
+Keys/
