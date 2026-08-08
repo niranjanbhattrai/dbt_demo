@@ -7,3 +7,5 @@ logs/
 profiles.yml
 dbt_project.yml
 Keys/
+*.p8
+*.pem
