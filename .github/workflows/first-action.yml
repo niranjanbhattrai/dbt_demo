@@ -18,11 +18,26 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: 
+      - self-hosted
+      - Windows
+      - x64
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Print greesting
         run: echo "Hello Niranjan!"
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        run: |
+          python -m pip install --upgrade pip
+          pip install dbt-snowflake
+      - name: Install dbt
+        run: pip install dbt
       - name: Print Goodbye
-        run: echo "Done -bye!"
+        run: dbt debug
+      - name: Run dbt models
+        run: dbt run
