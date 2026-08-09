@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
-      - name: Install dbt
-        run: pip install dbt
+      - name: Install dbt snowflake adapter
+        run: pip install dbt-snowflake
       - name: Run dbt models
         run: dbt run
