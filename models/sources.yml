@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: snowflake_sample_data
+    description: "This is a test source for snowflake data"
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables:
+      - name: ORDERS
+        description: "This is a test table for snowflake data from orders table"
+        identifier: orders
+
+
+        
+      - name: CUSTOMERS
+        description: "This is a test table for snowflake data from customers table"
+        identifier: customers
+
+
+  
+      - name: LINEITEM
+        description: "This is a test table for snowflake data from lineitem table"
+        identifier: lineitem
+
+      - name: NATION
+        description: "This is a test table for snowflake data from nation table"
+        identifier: nation
+
+
+      - name: REGION
+        description: "This is a test table for snowflake data from region table"
+        identifier: region
+
+
+      - name: SUPPLIER
+        description: "This is a test table for snowflake data from supplier table"
+        identifier: supplier
+      - name: PART
+        description: "This is a test table for snowflake data from part table"
+        identifier: part
+
+
+      - name: PARTSUPP
+        description: "This is a test table for snowflake data from partsupp table"
+        identifier: partsupp
