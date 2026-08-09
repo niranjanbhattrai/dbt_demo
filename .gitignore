@@ -5,7 +5,6 @@ logs/
 .env
 .user.yml
 profiles.yml
-dbt_project.yml
 Keys/
 *.p8
 *.pem
