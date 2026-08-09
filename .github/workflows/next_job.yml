@@ -29,7 +29,7 @@ jobs:
               dev:
                 type: snowflake
                 account: JYAPQSD-BF92862
-                user: {{ secrets.SNOWFLAKE_USER }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
                 role: snowflake_dbt
                 private_key: "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}"
                 database: RAW
