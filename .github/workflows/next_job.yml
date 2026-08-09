@@ -18,5 +18,32 @@ jobs:
           python-version: '3.12'
       - name: Install dbt snowflake adapter
         run: pip install dbt-snowflake
+      -  name: Create dbt profiles directory
+         run: mkdir -p ~/.dbt
+
+      - name: Create profiles.yml
+        run: |
+          cat <<EOF > ~/.dbt/profiles.yml
+          snowflake:
+            outputs:
+              dev:
+                type: snowflake
+                account: JYAPQSD-BF92862
+                user: {{ secrets.SNOWFLAKE_USER }}
+                role: snowflake_dbt
+                private_key: "${{ secrets.SNOWFLAKE_PRIVATE_KEY }}"
+                database: RAW
+                schema: Azure
+                threads: 1
+                warehouse: COMPUTE_WH
+            target: dev
+          EOF
+
+      - name: Test dbt connection
+        run: dbt debug
+
       - name: Run dbt models
         run: dbt run
+
+      - name: Run dbt tests
+        run: dbt test
