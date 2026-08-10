@@ -26,5 +26,5 @@ jobs:
       - name: Print greesting
         run: |
           echo "Hello Niranjan!"
-          echo " ${{ toJSON(github.events) }}"
+          echo " ${{ toJSON(github) }}"
 
