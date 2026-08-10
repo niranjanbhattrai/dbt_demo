@@ -25,6 +25,6 @@ jobs:
     steps:
       - name: Print greesting
         run: |
-          - echo "Hello Niranjan!"
-          - echo "This is my first GitHub Action workflow!"
+          echo "Hello Niranjan!"
+          echo "This is my first GitHub Action workflow!"
 
